@@ -1,0 +1,32 @@
+<head>
+</head>
+
+
+<body>
+<h2>Welcome <%= @player_name %>!</h2>
+
+<p>Please place your ships!</p>
+
+<form action="/ship_placement" method="post">
+  <select name="ships">
+  <option value=5>Carrier</option>
+  <option value=4>Destroyer</option>
+  <option value=3>Submarine</option>
+  </select>
+  <select name="orientation">
+  <option value=horizontally>Horizontal</option>
+  <option value=vertically>Vertically</option>
+  </select>
+  <select name="hor_co">
+  <option value=A>A</option>
+  <option value=B>B</option>
+  </select>
+  <select name="ver_co">
+  <option value=1>1</option>
+  <option value=2>2</option>
+  </select>
+
+  <input type="submit" value="Place Ship">
+</form>
+
+</body>
