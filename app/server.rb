@@ -4,6 +4,7 @@ require_relative './lib/game'
 require_relative './lib/board'
 require_relative './lib/cell'
 require_relative './lib/ship'
+require_relative './lib/water'
 
 class BattleShips < Sinatra::Base
 
@@ -23,18 +24,22 @@ class BattleShips < Sinatra::Base
 
   get '/ship_placement' do
     @player_name = GAME.player1.name
-    GAME.player1.board = Board.new(Cell)
+    GAME.player1.board = Board.new(Cell, Water)
+    @cell_value = GAME.player1.board.grid[:A1].content.class
     erb(:ship_placement)
   end
 
   post '/ship_placement' do
+    @player_name = GAME.player1.name
     shipsize = params[:ships].to_i
     ship = Ship.new(shipsize)
     orient = params[:orientation].to_sym
     coord = (params[:hor_co] + params[:ver_co]).to_sym
 
     GAME.player1.board.place(ship, coord, orient)
-    # erb :ship_placement
+
+    @cell_value = GAME.player1.board.grid[:A1].content.class
+    erb :ship_placement
   end
 
 end

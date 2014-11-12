@@ -1,10 +1,10 @@
 class Board
 	attr_reader :grid
 
-	def initialize(content)
+	def initialize(content, cell_content)
 		@grid = {}
 		[*"A".."J"].each do |l|
-			[*1..10].each {|n| @grid["#{l}#{n}".to_sym] = content.new}
+			[*1..10].each {|n| @grid["#{l}#{n}".to_sym] = content.new(cell_content.new)}
 		end
 	end
 
