@@ -6,6 +6,10 @@ class Game
 		player1, player2 = nil, nil
 	end
 
+	def players
+		[player1, player2]
+	end
+
 	def add_player(player)
 		self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
 	end
@@ -37,7 +41,7 @@ class Game
 private
 
 	def both_players_have_five_ships?
-		(player1.board.ships_count == 5) and (player2.board.ships_count == 5)
+		(player1.board.ships_count == 2) and (player2.board.ships_count == 2)
 	end
 
 	def both_players_have_boards?

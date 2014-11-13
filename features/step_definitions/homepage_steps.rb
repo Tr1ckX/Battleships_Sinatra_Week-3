@@ -11,9 +11,9 @@ When(/^I click on register$/) do
 end
 
 Then(/^I should be passed to the ship placement page$/) do
-  expect(current_path).to eq('/game')
+  expect(current_path).to eq('/ship_placement')
 end
 
-Then(/^see a greeting message with the player's name\.$/) do
-  expect(page).to have_content('Welcome John')
+Then(/^see a message to place the ships with the player's name\.$/) do
+  expect(page).to have_content('Please place your ships John')
 end
