@@ -25,7 +25,7 @@ class BattleShips < Sinatra::Base
   get '/ship_placement' do
     @player_name = GAME.player1.name
     GAME.player1.board = Board.new(Cell, Water)
-    @cell_value = GAME.player1.board.grid[:A1].content.class
+    @rows = GAME.player1.board.grid.values.each_slice(10).to_a
     erb(:ship_placement)
   end
 
@@ -36,9 +36,11 @@ class BattleShips < Sinatra::Base
     orient = params[:orientation].to_sym
     coord = (params[:hor_co] + params[:ver_co]).to_sym
 
+    @rows = GAME.player1.board.grid.values.each_slice(10).to_a
     GAME.player1.board.place(ship, coord, orient)
 
-    @cell_value = GAME.player1.board.grid[:A1].content.class
+
+    puts @rows
     erb :ship_placement
   end
 
