@@ -17,3 +17,8 @@ Learning how to use a webserver application
   - passing information with params
   - using embedded Ruby in HTML
   - testing the pages on localhost with a rack app
+
+Lerning the Behaviour Driven Development
+  - Cucumber to expect what is going to happen
+  - Capybara to check if happens
+  - TDD and pair program to make it happen
