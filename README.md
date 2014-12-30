@@ -25,3 +25,5 @@ Lerning the Behaviour Driven Development
   - Cucumber to expect what is going to happen
   - Capybara to check if happens
   - TDD and pair program to make it happen
+
+You can find this week's other project [here](https://github.com/Tr1ckX/Sinatra_Week-3) and the challenge [here](https://github.com/Tr1ckX/RPS_Week-3)
